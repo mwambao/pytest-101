@@ -1,0 +1,60 @@
+UNIT TESTING
+************
+- Unit testing is a software testing method by which individual units of source code are tested to determine whethere they are fit for use.
+- These individual units tested are like: classes, functions and subroutines are tested to see if they are giving desired results or not.
+
+WHY UNIT TEST? WHY SHOULD WE UNIT TEST OUR CODE?
+************************************************
+1. Tests reduce bugs in new features and existing features.
+- During development of new or existing featues, Unit tests assist to reduce in reducing the bugs that might be seen during execution of your code.
+
+2. Tests are good documentations.
+- Unit tests serves as good documentation for someone who is using your code i.e. since in unit testing we are testing the classes, functions the person will be able to understand how to use your code.
+
+3. Tests reduce the cost of change.
+- Unit tests reduce the cost of change in production i.e. it is must difficult and costlier to fix your code in production than when you are developing your code.
+
+4. Faster debugging.
+- Because you have the idea of the desired result of your code, so you can perfect your code.
+
+5. Faster developments.
+- Because you have the idea of the desired result of your code, so you can perfect your code.
+
+6. Better design.
+
+
+TESTING FRAMEWORKS
+******************
+* We can use any of these to write our unit tests:
+
+1. unittest
+- present  the standard Python library, you don't need to install it.
+
+2. nose
+- Not in the standard library.
+- For simpler tests than unittest.
+- It is simpler to use.
+
+3. pytest
+- Not in the standard library.
+- This is the most popular unit testing framework in Python.
+- We will explore pytest and use it.
+
+PYTEST INSTALLATION
+*******************
+#pip install pytest
+#pip list
+#pytest --help ==> This will show how to use pytest i.e.
+
+    usage: pytest [options] [file_or_dir] [file_or_dir] [...]
+
+PYTEST usage
+*************
+- we will create a unit test using pytest for our code math_func.py that has two functions.
+- The unit test file we will name it as test_math_funct.py.
+- prefix "test_" helps pytest to know that this is where unit tests functions are written.
+
+- You can also run pytest using "py.test" only as your commend since we used a keyword test in prefix hence it will run pytest of your code.
+
+- if you dont give prefix "test_" on unit test file, pytest wont recognize it as a unit test file.
+- same thing for the functions to be tested if you dont use the prefix, they wont be recognized for testing.
