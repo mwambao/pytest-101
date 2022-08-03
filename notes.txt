@@ -1,6 +1,6 @@
 UNIT TESTING
 ************
-- Unit testing is a software testing method by which individual units of source code are tested to determine whethere they are fit for use.
+- Unit testing is a software testing method by which individual units of source code are tested to determine whether they are fit for use.
 - These individual units tested are like: classes, functions and subroutines are tested to see if they are giving desired results or not.
 
 WHY UNIT TEST? WHY SHOULD WE UNIT TEST OUR CODE?
@@ -12,7 +12,7 @@ WHY UNIT TEST? WHY SHOULD WE UNIT TEST OUR CODE?
 - Unit tests serves as good documentation for someone who is using your code i.e. since in unit testing we are testing the classes, functions the person will be able to understand how to use your code.
 
 3. Tests reduce the cost of change.
-- Unit tests reduce the cost of change in production i.e. it is must difficult and costlier to fix your code in production than when you are developing your code.
+- Unit tests reduce the cost of change in production i.e. it is most difficult and costlier to fix your code in production than when you are developing your code.
 
 4. Faster debugging.
 - Because you have the idea of the desired result of your code, so you can perfect your code.
@@ -54,7 +54,7 @@ PYTEST usage
 - The unit test file we will name it as test_math_funct.py.
 - prefix "test_" helps pytest to know that this is where unit tests functions are written.
 
-- You can also run pytest using "py.test" only as your commend since we used a keyword test in prefix hence it will run pytest of your code.
+- You can also run pytest using "py.test" only as your command since we used a keyword test in prefix hence it will run pytest of your code.
 
 if you run using py.test:
 - if you dont give prefix "test_" on unit test file, pytest wont recognize it as a unit test file if you run command py.test. It will work only if you specify the unittest file.
@@ -68,7 +68,54 @@ if you run using py.test:
 test_math_func.py::test_add PASSED                                                                                               [ 50%] 
 test_math_func.py::test_add_strings PASSED                                                                                       [100%] 
 
+- You can also use or with -k e.g. to execute tests with 'add' or 'string':
+ #pytest test_math_func.py -v -k "add or product"
+rootdir: C:\Users\emwadun\OneDrive - Ericsson\Desktop\Projects\pytest-101
+collected 3 items                                                                                                                                       
 
+test_math_func.py::test_add PASSED                                                                                                               [ 33%]
+test_math_func.py::test_product PASSED                                                                                                           [ 66%] 
+test_math_func.py::test_add_strings PASSED
+
+- You can also use 'and'.
+- We can also use -m option for mark expresions. For this we need to import pytest module in the test file. Then use decorators as shown in the file test_math_func2.py. 
+Example when we want to run only tests marked as string we can run:
+#pytest test_math_func2.py -m strings -v
+============================================================================ test session starts ============================================================================
+
+collected 3 items / 2 deselected / 1 selected                                                                                                                                 
+
+test_math_func2.py::test_add_strings PASSED                                                                                                                            [100%]
+
+================================================================ 1 passed, 2 deselected, 3 warnings in 0.02s ================================================================ 
+
+As you can see 1 test was selected and passed while 2 others were deselected as they did not match the mark.
+
+
+- Another option is -x. This tells pytest to stop all the tests if there is any failure:
+#pytest .\test_math_func2.py -v -x
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+======================================================================= 1 failed, 3 warnings in 0.07s ======================================================================= 
+
+- Another option is --tb i.e.
+--tb=style            traceback print mode (auto/long/short/line/native/no)
+This is if we want to show or hide level of the stack trace. e.g.
+e.g. 
+pytest test_math_func2.py -v --tb=no
+Will not show the stack trace incase we have AssertionError.
+The above disables the stack trace.
+
+- Another option is --maxfail.
+This shows tells pytest the maximum number of failed tests that are expected before the whole unit test exits. example:
+#pytest .\test_math_func2.py --maxfail=2
+
+If two tests fails the whole unit test exits but if one fails, the execution will complete to end without exiting.
+
+- Another option is -s or --capture=no
+This is to enable to print output.
+
+- Another option is -q for quite mode.
+Here no details of the test are shown, only pass or fail is shown.
 
 
 -------
