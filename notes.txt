@@ -118,6 +118,8 @@ This is to enable to print output.
 Here no details of the test are shown, only pass or fail is shown.
 
 
+- parametrize decorator: The builtin pytest.mark.parametrize decorator enables parametrization of arguments for a test function. Here is a typical example of a test function that implements checking that a certain input leads to an expected output.
+
 -------
 The pytest framework makes it easy to write small tests, yet scales to support complex functional testing for applications and libraries.
 pytest is a mature full-featured Python testing tool that helps you write better programs. Learn Pytest basic functionality | Setup & Tear Down | Fixtures
