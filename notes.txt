@@ -39,6 +39,7 @@ TESTING FRAMEWORKS
 - Not in the standard library.
 - This is the most popular unit testing framework in Python.
 - We will explore pytest and use it.
+- sPytest is used for Python API test cases, database projects, artificial intelligence, and even for blockchain applications.
 
 PYTEST INSTALLATION
 *******************
@@ -119,6 +120,20 @@ Here no details of the test are shown, only pass or fail is shown.
 
 
 - parametrize decorator: The builtin pytest.mark.parametrize decorator enables parametrization of arguments for a test function. Here is a typical example of a test function that implements checking that a certain input leads to an expected output.
+
+
+Pytest Fixtures (how to test your app with pytest fixrures)
+***************
+- Having the ability to use pytest with fixtures alone can create a career path for any talented Python developer.
+Definition:
+* Pytest fixtures are functions that can be used to manage our apps states and dependencies. 
+Most importantly, they can provide data for testing and a wide range of value types when explicitly called by our testing software. 
+You can use the mock data that fixtures create across multiple tests.
+- Fixtures are very flexible and have multiple uses cases. Since Python is an object-oriented programming language, we can parse different types of objects to be used as test data such as integers, strings, lists, dictionaries, booleans, classes, floats, and other complex numbers.
+- We have to indicate that the function is a fixture with @pytest.fixture. These specific Python decorations let us know that the next method is a pytest fixture.
+- Fixtures are modular. This means one or more fixtures may be dependent on another fixture. Therefore, if we change one fixture, it may result in changing the function of other fixtures. This causes our test suite to scale.
+- One fixture simply requests the other, and hey! We can combine all sorts of objects together, like strings, or do complex math.
+
 
 -------
 The pytest framework makes it easy to write small tests, yet scales to support complex functional testing for applications and libraries.
